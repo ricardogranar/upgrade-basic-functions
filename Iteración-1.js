@@ -120,8 +120,16 @@ const duplicates = [
     'soda'
   ];
   function removeDuplicates(param) {
-    // insert code
+    let arraySinDuplicados = []
+
+  for (let h = 0; h < param.length; h++) {
+  if(!arraySinDuplicados.includes(param[h])){
+    arraySinDuplicados.push(param[h])
   }
+  }
+  return arraySinDuplicados
+}
+console.log(removeDuplicates(duplicates))
 
   //Iteración #7: Buscador de nombres**
 
