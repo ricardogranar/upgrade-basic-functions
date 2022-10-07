@@ -62,7 +62,6 @@ function sumAll(param) {
     }
     return sum
 }
-
 console.log(sumAll(numbers))
 
 
