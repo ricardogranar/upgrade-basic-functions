@@ -134,7 +134,27 @@ console.log(removeDuplicates(duplicates))
   //Iteración #7: Buscador de nombres**
 
 //Crea una función que reciba por parámetro un array y el valor que desea comprobar que existe dentro de dicho array - 
-//comprueba si existe el elemento, en caso que existan nos devuelve la posición de dicho elemento y por la contra un false. Puedes usar este array para probar tu función:
+//comprueba si existe el elemento, en caso que existan nos devuelve la posición de dicho elemento y por la contra un false. 
+//Puedes usar este array para probar tu función:
+/* función( array, valor a comprobar)
+
+  for (const element of array){
+
+    if (element === valor a comprobar) {
+
+      existe
+
+      console.log(array[i] + valor a comprobar);
+
+    } else {
+
+      no existe
+
+      console.log(false);
+
+    }
+
+  }*/
 
 const nameFinder = [
     'Peter',
@@ -149,9 +169,23 @@ const nameFinder = [
     'Jessica',
     'Marc'
   ];
-  function finderName(param) {
-    // insert code
+function finderName(param, nameToFind) {
+  for (let m = 0; m < param.length; m++) {
+    if(param[m] === nameToFind){
+      return `Tu nombre existe en el array: ${true}  y es el índice: ${param.indexOf(nameToFind)}`
+    }
   }
+  return false
+}
+
+console.log(finderName(nameFinder, "Peggy"));
+
+
+
+
+
+
+
 
 //Iteration #8: Contador de repeticiones**
 
@@ -170,7 +204,16 @@ const counterWords = [
     'upgrade',
     'code'
   ];
-  function repeatCounter(param) {
-    // insert code
-  }
 
+  function repeatCounter(param) {
+    let cont = {};
+    for (let a = 0; a < param.length; a++) {
+      if ( param[a] in cont){
+        cont[param[a]]++
+      } else{
+        cont[param[a]] = 1
+      }
+    }
+    return cont
+  }
+  console.log(repeatCounter(counterWords));
